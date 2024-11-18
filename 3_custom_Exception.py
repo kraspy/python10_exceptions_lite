@@ -1,7 +1,8 @@
 class NegativeNumberError(Exception):
     def __init__(self, value, message):
-        super().__init__(message)
+        self.message = message
         self.value = value
+        super().__init__(message)
 
     def __str__(self):
         return f'Error ({self.value}): {self.message}'
